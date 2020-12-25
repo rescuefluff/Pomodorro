@@ -4,13 +4,11 @@ class ProgressWheel: UIView {
     
     let progressLayer = CAShapeLayer()
     
-    
     private let gradientStartColor: UIColor = #colorLiteral(red: 0.6059103095, green: 0.1625157377, blue: 1, alpha: 1)
     private let gradientEndColor: UIColor = #colorLiteral(red: 1, green: 0.27654477, blue: 0.1005079097, alpha: 1)
 //    private let gradientStartColor: UIColor = UIColor.black.withAlphaComponent(0.3)
 //    private let gradientEndColor: UIColor = UIColor.white.withAlphaComponent(0.3)
 
-    
     let lineWidth: CGFloat = 60
     
     public var progress: Double = 0 {
@@ -31,7 +29,6 @@ class ProgressWheel: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     func createBackgroundCircle () {
-        
         
         let width = frame.width
         let height = frame.height
@@ -83,6 +80,4 @@ class ProgressWheel: UIView {
         layer.addSublayer(gradientLayer)
         
     }
-    
-    
 }

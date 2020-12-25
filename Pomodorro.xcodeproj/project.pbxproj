@@ -19,6 +19,7 @@
 		16E1E4A1257107E500D49F8B /* StartStopButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16E1E4A0257107E500D49F8B /* StartStopButton.swift */; };
 		16E1E4A32571527100D49F8B /* TimeInterval.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16E1E4A22571527100D49F8B /* TimeInterval.swift */; };
 		16E1E4A52571539A00D49F8B /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16E1E4A42571539A00D49F8B /* Data.swift */; };
+		16E3FB652579545C001617F3 /* InnerShadow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16E3FB642579545C001617F3 /* InnerShadow.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,7 @@
 		16E1E4A0257107E500D49F8B /* StartStopButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartStopButton.swift; sourceTree = "<group>"; };
 		16E1E4A22571527100D49F8B /* TimeInterval.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeInterval.swift; sourceTree = "<group>"; };
 		16E1E4A42571539A00D49F8B /* Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
+		16E3FB642579545C001617F3 /* InnerShadow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InnerShadow.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,6 +88,7 @@
 			isa = PBXGroup;
 			children = (
 				16E1E498256FE77800D49F8B /* ProgressWheel.swift */,
+				16E3FB642579545C001617F3 /* InnerShadow.swift */,
 				16E1E49A2570E6C100D49F8B /* ProgressBar.swift */,
 				16E1E4A0257107E500D49F8B /* StartStopButton.swift */,
 			);
@@ -190,6 +193,7 @@
 			files = (
 				16E1E499256FE77800D49F8B /* ProgressWheel.swift in Sources */,
 				16E1E4A32571527100D49F8B /* TimeInterval.swift in Sources */,
+				16E3FB652579545C001617F3 /* InnerShadow.swift in Sources */,
 				16E1E49E2570E9BC00D49F8B /* Colors.swift in Sources */,
 				16E1E486256FE73300D49F8B /* ViewController.swift in Sources */,
 				16E1E482256FE73300D49F8B /* AppDelegate.swift in Sources */,

@@ -9,28 +9,28 @@ class ViewController: UIViewController {
     
     var timerIsRunning: Bool = false {
         didSet {
-            debugLabel1.text = "timerIsRunning = \(timerIsRunning)"
+//            debugLabel1.text = "progress = \((data.intervals[currentTaskIndex].time - seconds ) / data.intervals[currentTaskIndex].time)"
         }
     }
     var currentTaskIndex: Int = 0 {
         didSet {
-            debugLabel2.text = "currentTaskIndex = \(currentTaskIndex)"
-            debugLabel3.text = "taskType = \(data.intervals[currentTaskIndex].type)"
+//            debugLabel2.text = "currentTaskIndex = \(currentTaskIndex)"
+//            debugLabel3.text = "taskType = \(data.intervals[currentTaskIndex].type)"
         }
     }
     var timer: Timer?
     var seconds: Double = 0 {
         didSet {
-            progressWheel.progress = (data.intervals[currentTaskIndex].time - seconds) / data.intervals[currentTaskIndex].time
+           // progressWheel.progress = (data.intervals[currentTaskIndex].time - seconds ) / data.intervals[currentTaskIndex].time
             progressBar.progress = totalProgress / totalTime
             
-            debugLabel4.text = "\(progressBar.progress)"
-            
-            
+            debugLabel2.text = "seconds = \(seconds)"
+            debugLabel3.text = "totalTime = \(totalTime)"
+            debugLabel4.text = "totalProgress = \(totalProgress)"
+            debugLabel1.text = "currentProgress = \((data.intervals[currentTaskIndex].time - seconds ) / data.intervals[currentTaskIndex].time)"
         }
     }
-
-    let progressWheel = ProgressWheel()
+    let progressWheel = InnerShadow()
     let progressBar = ProgressBar()
     let startStopButton = StartStopButton()
     
@@ -81,16 +81,22 @@ class ViewController: UIViewController {
             //Ставим таймер на паузу
             timer?.invalidate()
             timerIsRunning = false
+            //Меняем label на кнопке
+            startStopButton.stateLabel.text = "PLAY"
+            
         //Если таймер не работает
         } else {
                 //Запускаем таймер дальше
                 timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(timerAction), userInfo: nil, repeats: true)
                 timerIsRunning = true
+                //Меняем label на кнопке
+            startStopButton.stateLabel.text = "PAUSE"
         }
     }
     @objc func timerAction() {
         //Если таймер закончился
         if seconds == 0 {
+            //totalProgress += 1
             timerLabel.text = "\(seconds)"
             timer?.invalidate()
             timerIsRunning = false
