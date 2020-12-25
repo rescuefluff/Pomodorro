@@ -9,19 +9,19 @@ class ViewController: UIViewController {
     
     var timerIsRunning: Bool = false {
         didSet {
-//            debugLabel1.text = "progress = \((data.intervals[currentTaskIndex].time - seconds ) / data.intervals[currentTaskIndex].time)"
+           debugLabel1.text = "progress = \((data.intervals[currentTaskIndex].time - seconds ) / data.intervals[currentTaskIndex].time)"
         }
     }
     var currentTaskIndex: Int = 0 {
         didSet {
-//            debugLabel2.text = "currentTaskIndex = \(currentTaskIndex)"
-//            debugLabel3.text = "taskType = \(data.intervals[currentTaskIndex].type)"
+            debugLabel2.text = "currentTaskIndex = \(currentTaskIndex)"
+            debugLabel3.text = "taskType = \(data.intervals[currentTaskIndex].type)"
         }
     }
     var timer: Timer?
     var seconds: Double = 0 {
         didSet {
-           // progressWheel.progress = (data.intervals[currentTaskIndex].time - seconds ) / data.intervals[currentTaskIndex].time
+            progressWheel.progress = (data.intervals[currentTaskIndex].time - seconds ) / data.intervals[currentTaskIndex].time
             progressBar.progress = totalProgress / totalTime
             
             debugLabel2.text = "seconds = \(seconds)"
@@ -30,7 +30,7 @@ class ViewController: UIViewController {
             debugLabel1.text = "currentProgress = \((data.intervals[currentTaskIndex].time - seconds ) / data.intervals[currentTaskIndex].time)"
         }
     }
-    let progressWheel = InnerShadow()
+    let progressWheel = ProgressWheel()
     let progressBar = ProgressBar()
     let startStopButton = StartStopButton()
     

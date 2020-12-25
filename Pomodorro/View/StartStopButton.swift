@@ -3,13 +3,11 @@ import UIKit
 class StartStopButton: UIButton {
     let ourShadowRadius: CGFloat = 10
     
-    
-    
     override var isHighlighted: Bool {
         didSet {
             print("Is Highlighted = \(isHighlighted)")
             if isHighlighted {
-                self.backgroundColor = UIColor.red
+                self.backgroundColor = Colors.offWhite
             }
         }
     }
@@ -26,7 +24,6 @@ class StartStopButton: UIButton {
         label.font = UIFont(name: "AmericanTypewriter-Bold", size: 20)
         return label
     }()
-    
  
     override func draw(_ rect: CGRect) {
 
@@ -40,16 +37,14 @@ class StartStopButton: UIButton {
         gradientLayer.startPoint = CGPoint(x: 0, y: 0)
         gradientLayer.endPoint = CGPoint(x: 1, y: 1)
 
-        
-        
         let maskLayer = CAShapeLayer()
         maskLayer.path = UIBezierPath(roundedRect: rect, cornerRadius: cornerRadius).cgPath
         gradientLayer.mask = maskLayer
         
         let darkShadow = CALayer()
         darkShadow.frame = bounds
-        darkShadow.backgroundColor  = UIColor.red.cgColor
-        darkShadow.shadowColor = UIColor.red.cgColor
+        darkShadow.backgroundColor  = Colors.offWhite.cgColor
+        darkShadow.shadowColor = Colors.darkShadow.cgColor
         darkShadow.cornerRadius = cornerRadius
         darkShadow.shadowOffset = CGSize(width: -ourShadowRadius, height: -ourShadowRadius)
         darkShadow.shadowOpacity = 1
@@ -59,8 +54,8 @@ class StartStopButton: UIButton {
         
         let lightShadow = CALayer()
         lightShadow.frame = bounds
-        lightShadow.backgroundColor =  UIColor.green.cgColor
-        lightShadow.shadowColor = UIColor.green.cgColor
+        lightShadow.backgroundColor =  Colors.offWhite.cgColor
+        lightShadow.shadowColor = Colors.lightShadow.cgColor
         lightShadow.cornerRadius = cornerRadius
         lightShadow.shadowOffset = CGSize(width: ourShadowRadius/2, height: ourShadowRadius/2)
         lightShadow.shadowOpacity = 1
